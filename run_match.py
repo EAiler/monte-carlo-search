@@ -14,6 +14,7 @@ from multiprocessing.pool import ThreadPool as Pool
 from isolation import Isolation, Agent, play
 from sample_players import RandomPlayer, GreedyPlayer, MinimaxPlayer
 from my_custom_player import CustomPlayer
+from my_players import MonteCarloPlayer, MinimaxIterativePlayer
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +26,7 @@ TEST_AGENTS = {
     "RANDOM": Agent(RandomPlayer, "Random Agent"),
     "GREEDY": Agent(GreedyPlayer, "Greedy Agent"),
     "MINIMAX": Agent(MinimaxPlayer, "Minimax Agent"),
-    "SELF": Agent(CustomPlayer, "Custom TestAgent")
+    "SELF": Agent(MonteCarloPlayer, "Custom TestAgent")
 }
 
 Match = namedtuple("Match", "players initial_state time_limit match_id debug_flag")

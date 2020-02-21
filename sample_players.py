@@ -4,6 +4,7 @@
 import logging
 import pickle
 import random
+#from isolation import Isolation
 
 logger = logging.getLogger(__name__)
 
