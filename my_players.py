@@ -25,7 +25,9 @@ class MonteCarloPlayer(DataPlayer):
         TIME_LIMIT = 150 # milliseconds
 
         if state.terminal_test() or state.ply_count < 2:
-          self.queue.put(random.choice(state.actions()))
+            debug_board = DebugState.from_state(state)
+            print(debug_board)
+            self.queue.put(random.choice(state.actions()))
         else:
             debug_board = DebugState.from_state(state)
             print(debug_board)
@@ -48,8 +50,12 @@ class MinimaxIterativePlayer(DataPlayer):
         TIME_LIMIT = 150 # milliseconds
 
         if state.terminal_test() or state.ply_count < 2:
+            debug_board = DebugState.from_state(state)
+            print(debug_board)
             self.queue.put(random.choice(state.actions()))   
         else:
+            debug_board = DebugState.from_state(state)
+            print(debug_board)
             minimaxAB = MinimaxAlphaBetaSearch(state, depth=6)
             res = minimaxAB.minimax_alphaBeta(TIME_LIMIT)
   
