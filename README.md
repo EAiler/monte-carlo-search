@@ -1,5 +1,7 @@
 # monte-carlo-search
-Implementing Monte Carlo Search Technique on the isolation game
+Implementing Monte Carlo Search Technique on the isolation game   
+[Monte Carlo Search (Wiki)](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search)
+
 
 ## Background
 
@@ -32,7 +34,7 @@ The code is run in Debug Mode, which shows the states of the game in the termina
 ## Further Modifications that can be made to the code
 Udacity leaves multiple choices open for further improving the code and the agent playing isolation:
 
-### Opening Book
+- **Opening Book**
 It is necessary to write own code to develop an opening book, but it is possible to pass the book to the agent by saving the files as "data.pickle" in the same folder as `my_players.py`. Using the [pickle](https://docs.python.org/3/library/pickle.html) module to serialize the object that should be saved. The pickled object will be accessible to the agent through the `self.data` attribute.
 
 For example, the contents of dictionary `my_data` can be saved to disk in the following way:
@@ -45,8 +47,8 @@ with open("data.pickle", 'wb') as f:
     pickle.dump(my_data, f)
 ```
 
-### Custom Heuristic
-In the file _MinimaxIterativeAgent.py_ that was implemented, it is possible to add further heuristic functions and call them in the _score()_ function.
+- **Custom Heuristic**
+In the file _my_players.py_ that was implemented, it is possible to add further heuristic functions and call them in the _score()_ function for the MinimaxAgent with Iterative Deepening. The alternative is to use one of the players implemented in the _sample_players.py_ and add a relevant score function there for computing heurisitics.
 
 
 
